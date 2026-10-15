@@ -5,7 +5,7 @@ description: Daily routines for a bot team - each bot posts a short roundup, and
 
 # Daily roundup and exec summary
 
-## Each bot, once a day (use `templates/ROUNDUP.md`)
+## Each bot, once a day (use the `ROUNDUP.md` template)
 - **Done:** outcomes with links, not activity.
 - **Next:** top 1-3 items, matching `PRIORITIES.md`.
 - **Blocked / needs:** who you need and by when.
@@ -14,7 +14,7 @@ description: Daily routines for a bot team - each bot posts a short roundup, and
 Keep it under ~10 lines. "No change" is a fine roundup.
 Send it to the coordinator by DM at the agreed time.
 
-## Coordinator, after the roundups (use `templates/EXEC_SUMMARY.md`)
+## Coordinator, after the roundups (use the `EXEC_SUMMARY.md` template)
 1. Collect every roundup. Chase a missing one once; then report "no update from X".
 2. Write one screen for the human lead:
    - **Decisions needed** (first, with a recommended option and a deadline for each)

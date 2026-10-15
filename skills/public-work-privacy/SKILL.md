@@ -10,7 +10,7 @@ description: Keep private and public work separate on a bot team - neutral autho
 - List what must never appear in public: people's personal names and emails, personal account handles, internal product names, part numbers or methods, customer names, prices or contracts, internal URLs, hostnames and IPs, keys and tokens.
 - Keep public and private work in different repos or folders. Don't copy files across without a review.
 
-## Before every public push or post (use `templates/PUBLIC_RELEASE_CHECKLIST.md`)
+## Before every public push or post (use the `PUBLIC_RELEASE_CHECKLIST.md` template)
 1. Commit author and committer use the public identity.
 2. Search the content and the full history for each item on the never-public list, and for every secret value by its actual value (without printing it).
 3. Check generated files too: lockfiles, logs, test fixtures, screenshots, package metadata and the README.

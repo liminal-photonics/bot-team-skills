@@ -8,7 +8,7 @@ description: Set up or apply roles and ownership for a team of AI bots so every 
 One area, one owner. A bot works inside its own area, asks the owner before touching another area, and hands off anything that isn't its job.
 
 ## Set up
-1. Create `ROLES.md` from `templates/ROLES.md` (run `npx -y github:liminal-photonics/bot-team-skills init` to copy all templates into a `bot-team/` folder, or copy them by hand).
+1. Create `ROLES.md` from the `ROLES.md` template (run `npx -y github:liminal-photonics/bot-team-skills init` to copy all templates into a `bot-team/` folder, or copy them by hand).
 2. For each bot fill in: name, one-line mission, **owns** (areas, repos, channels, files), **does not own**, inputs it needs, outputs it produces, who it reports to, and its escalation contact.
 3. Name one human **approver** for each kind of irreversible action (sending, posting, spending, publishing, deleting). Bots draft; approvers approve.
 4. Name a **coordinator** bot that owns `PRIORITIES.md`, the daily roundup and routing of unowned work.

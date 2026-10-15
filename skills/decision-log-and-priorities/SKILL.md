@@ -5,7 +5,7 @@ description: Keep a team decision log and a single ranked priorities file that e
 
 # Decision log and priorities
 
-Two plain files are the team's memory: `DECISIONS.md` (append-only) and `PRIORITIES.md` (one ranked list). Templates are in `templates/`.
+Two plain files are the team's memory: `DECISIONS.md` (append-only) and `PRIORITIES.md` (one ranked list). The templates are in this plugin's `templates/` folder; `init` copies them into your project's `bot-team/` folder.
 
 ## Decision log
 - Append an entry whenever a choice would be expensive to re-argue: scope, owners, tools, vendors, policy, anything a human approved.

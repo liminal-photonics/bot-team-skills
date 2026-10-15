@@ -5,9 +5,9 @@ description: Hand work from one bot to another by direct message with a complete
 
 # Bot handoff by DM
 
-Handoffs go by direct message to the owning bot, not to a busy channel where they can be missed. Treat every handoff as **urgent by default**: send it with the highest normal priority, and expect an acknowledgment. Downgrade only when the sender states "not urgent" and a by-when date.
+Handoffs go by direct message to the owning bot, not to a busy channel where they can be missed. Treat every handoff as **urgent by default**: send it with the highest normal priority, and expect an acknowledgment. The only exceptions are pure FYI messages that need no action, and handoffs the sender marks "not urgent" with a by-when date.
 
-## The handoff message (use `templates/HANDOFF.md`)
+## The handoff message (use the `HANDOFF.md` template)
 1. **Ask:** one sentence, starting with a verb.
 2. **Why / priority:** link the `PRIORITIES.md` item or decision ID.
 3. **Context:** what's done, where it lives (links, branches, file paths), what you tried.
