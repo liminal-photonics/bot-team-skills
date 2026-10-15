@@ -12,6 +12,8 @@ if (cmd !== "init" && cmd !== "list") {
 if (cmd === "list") console.log((await listTemplates()).join("\n"));
 else {
   const dest = resolve(args.find((a, i) => i > 0 && !a.startsWith("--")) || "bot-team");
-  const r = await init(dest, { force: args.includes("--force") });
+  let r;
+  try { r = await init(dest, { force: args.includes("--force") }); }
+  catch (e) { console.error(`bot-team-skills: ${e.message}`); process.exit(1); }
   console.log(`Templates in ${dest}\n  copied: ${r.copied.join(", ") || "none"}\n  kept existing: ${r.skipped.join(", ") || "none"}`);
 }

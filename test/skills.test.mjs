@@ -53,3 +53,18 @@ test("init copies templates and never overwrites without --force", async () => {
   const f = await init(d, { force: true });
   assert.ok(f.copied.includes("ROLES.md"));
 });
+
+test("init edge cases: destination is a file, existing files kept, force overwrites", async () => {
+  const { init } = await import("../lib/init.mjs");
+  const { mkdtemp, writeFile, readFile } = await import("node:fs/promises");
+  const { tmpdir } = await import("node:os");
+  const { join } = await import("node:path");
+  const d = await mkdtemp(join(tmpdir(), "bts-"));
+  await writeFile(join(d, "afile"), "x");
+  await assert.rejects(init(join(d, "afile")), /not a folder/);
+  await writeFile(join(d, "ROLES.md"), "mine");
+  const r = await init(d);
+  assert.ok(r.skipped.includes("ROLES.md")); assert.equal(await readFile(join(d, "ROLES.md"), "utf8"), "mine");
+  const again = await init(d); assert.equal(again.copied.length, 0);
+  const f = await init(d, { force: true }); assert.ok(f.copied.includes("ROLES.md"));
+});
