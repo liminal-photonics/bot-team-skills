@@ -1,0 +1,15 @@
+{
+  "name": "bot-team-skills",
+  "displayName": "Bot Team Skills",
+  "version": "0.1.0",
+  "description": "Skills and templates for running a team of AI bots: roles and single ownership, a decision log and ranked priorities, urgent-by-default DM handoffs, stop after 3 failures, push back once, draft-then-approve for sends and spending, daily roundups and an exec summary, cross-area PR review, CI minute conservation and keeping public work free of private details. Generic, no setup or keys needed.",
+  "author": { "name": "Liminal Photonics" },
+  "homepage": "https://github.com/liminal-photonics/bot-team-skills",
+  "repository": "https://github.com/liminal-photonics/bot-team-skills",
+  "license": "MIT",
+  "logo": "assets/logo.svg",
+  "keywords": ["agents", "bots", "multi-agent", "team", "workflow", "handoff", "approval", "code-review", "ci", "privacy"],
+  "category": "productivity",
+  "tags": ["agents", "team", "workflow", "skills"],
+  "skills": "./skills/"
+}
