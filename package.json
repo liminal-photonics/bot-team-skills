@@ -5,7 +5,7 @@
   "type": "module",
   "bin": { "bot-team-skills": "bin/bot-team-skills.mjs" },
   "files": ["bin/", "lib/", "templates/", "skills/"],
-  "scripts": { "test": "node --test test/", "live": "node scripts/live-smoke.mjs" },
+  "scripts": { "test": "node --test", "live": "node scripts/live-smoke.mjs" },
   "engines": { "node": ">=18" },
   "author": "Liminal Photonics",
   "license": "MIT",
