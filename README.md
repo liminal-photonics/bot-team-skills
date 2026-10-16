@@ -22,7 +22,7 @@ No MCP server, no API keys. Install the plugin and the skills become available t
 
 `ROLES.md`, `DECISIONS.md`, `PRIORITIES.md`, `HANDOFF.md`, `APPROVAL_REQUEST.md`, `ROUNDUP.md`, `EXEC_SUMMARY.md`, `PUBLIC_RELEASE_CHECKLIST.md`
 
-Copy them into a `bot-team/` folder (existing files are never overwritten unless you pass `--force`):
+Copy them into a `bot-team/` folder. Existing files are kept: `--dry-run` shows what would happen, and `--force` only previews which files would be replaced until you add `--yes`:
 
 ```
 npx -y github:liminal-photonics/bot-team-skills init            # ./bot-team/

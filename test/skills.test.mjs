@@ -51,7 +51,7 @@ test("init copies templates and never overwrites without --force", async () => {
   assert.ok(r.copied.includes("DECISIONS.md"));
   assert.equal(await readFile(join(d, "ROLES.md"), "utf8"), "mine");
   const f = await init(d, { force: true });
-  assert.ok(f.copied.includes("ROLES.md"));
+  assert.ok(f.replaced.includes("ROLES.md"));
 });
 
 test("init edge cases: destination is a file, existing files kept, force overwrites", async () => {
@@ -66,5 +66,16 @@ test("init edge cases: destination is a file, existing files kept, force overwri
   const r = await init(d);
   assert.ok(r.skipped.includes("ROLES.md")); assert.equal(await readFile(join(d, "ROLES.md"), "utf8"), "mine");
   const again = await init(d); assert.equal(again.copied.length, 0);
-  const f = await init(d, { force: true }); assert.ok(f.copied.includes("ROLES.md"));
+  const f = await init(d, { force: true }); assert.ok(f.replaced.includes("ROLES.md"));
+});
+
+test("mock 2-bot handoff: the HANDOFF template has every field the bot-handoff skill requires", async () => {
+  const { readFile } = await import("node:fs/promises");
+  const skill = await readFile(new URL("../skills/bot-handoff/SKILL.md", import.meta.url), "utf8");
+  const tpl = await readFile(new URL("../templates/HANDOFF.md", import.meta.url), "utf8");
+  for (const field of ["Ask", "Priority / why", "Context", "Done means", "By when", "Approvals", "Secrets"]) assert.ok(tpl.includes(`**${field}:**`), field);
+  assert.match(skill, /secret/i);
+  // a filled-in handoff leaves no placeholders for the receiver to ask about
+  const filled = tpl.replace(/<!--[\s\S]*?-->/g, "").replace(/<[^>]+>/g, "x");
+  assert.doesNotMatch(filled, /[<>]/);
 });
